@@ -3,7 +3,8 @@ import { useState } from 'react'
 const App = () => {
   const [formData, setFormData] = useState({
     firstName: '',
-    city: ''
+    city: '',
+    lastName: ''
   })
 
   const handleChange = (event) => {
@@ -14,7 +15,7 @@ const App = () => {
     
     const inputName = event.target.name
     const inputValue = event.target.value
-    
+
     currentFormData[inputName] = inputValue
     
     setFormData(currentFormData)
@@ -25,8 +26,10 @@ const App = () => {
   return (
     <>
       <h1>Controlled Forms</h1>
+      
       <input value={formData.city} name='city' onChange={handleChange}></input>
       <input value={formData.firstName} name='firstName' onChange={handleChange}></input>
+      <input value={formData.lastName} name='lastName' onChange={handleChange}></input>
     </>
   )
 }
